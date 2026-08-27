@@ -31,6 +31,25 @@ Widevine DRM support.
 Homebrew Channel installs are **permanent** — they survive reboots and don't
 expire.
 
+### If your TV can't be rooted
+
+Rooting is patched on newer LG firmware, so **`cani.rootmy.tv` may report that no
+exploit is available for your model**. That's an LG platform limitation — there's
+no way around it for the permanent install. Your options then are:
+
+- **Don't update, or downgrade, the TV firmware** — if a known-rootable firmware
+  exists for your model, `cani.rootmy.tv` will say so. (Downgrading isn't always
+  possible and is at your own risk.)
+- **Use Developer Mode instead** (see the bottom of this guide). It works on any
+  TV, but the install **expires after ~50 hours** and must be re-enabled, and it
+  needs a computer with LG's CLI — fine for occasional viewing, tedious for daily
+  use.
+- **Watch on another device** you already own (phone/Android TV/web) — nothing
+  here changes your FanCode account.
+
+There is unfortunately no un-rooted, permanent way to sideload a third-party app
+on webOS; LG only allows that through their own store.
+
 ---
 
 ## First run
