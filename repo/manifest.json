@@ -1,0 +1,15 @@
+{
+  "id": "com.clyde.fancode",
+  "version": "1.0.0",
+  "type": "web",
+  "title": "FanCode (unofficial)",
+  "appDescription": "Unofficial FanCode live sports client for LG webOS",
+  "iconUri": "https://raw.githubusercontent.com/cjd9/Fancode-lgwebos/main/repo/icon160.png",
+  "sourceUrl": "https://github.com/cjd9/Fancode-lgwebos",
+  "rootRequired": false,
+  "ipkUrl": "https://raw.githubusercontent.com/cjd9/Fancode-lgwebos/main/dist/com.clyde.fancode_1.0.0_all.ipk",
+  "ipkHash": {
+    "sha256": "f74f228a4c89962b222424410b18a8a2ea38110033e39a3135434b8b58479a70"
+  },
+  "ipkSize": 137400
+}

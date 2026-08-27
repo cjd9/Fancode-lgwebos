@@ -12,7 +12,26 @@ Widevine DRM support.
 
 ---
 
-## Easiest: install via Homebrew Channel (permanent, recommended)
+## Easiest: add the repository to Homebrew Channel (one-time, then 1-click)
+
+If your TV is rooted (Homebrew Channel installed), you can add this app's repo so
+it shows up in the catalog like any other homebrew app — and gets update prompts:
+
+1. Open **Homebrew Channel** → **Settings** (gear icon).
+2. Under **Repositories**, choose **Add repository** and enter:
+   ```
+   https://raw.githubusercontent.com/cjd9/Fancode-lgwebos/main/repo/api/apps.json
+   ```
+3. Go back to the app list — **FanCode (unofficial)** now appears. Select it →
+   **Install**.
+4. Launch it from your TV's app list.
+
+That's the smoothest path for friends. If you'd rather install the `.ipk`
+directly (or your TV only has Developer Mode), use the methods below.
+
+---
+
+## Alternative: install the .ipk directly (Homebrew Channel or Dev Mode)
 
 1. Install the **Homebrew Channel** on the TV. On a computer, open
    **https://cani.rootmy.tv/** and enter your TV model + firmware — it tells you

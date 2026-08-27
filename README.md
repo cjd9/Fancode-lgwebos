@@ -41,14 +41,15 @@ The easiest, permanent method is the **Homebrew Channel**:
    model + firmware, then follow its steps. (The classic **https://rootmy.tv/**
    exploit still works on some sets, but has been patched on many — the
    compatibility checker points you to the right method.)
-2. Grab the latest package: [`dist/com.clyde.fancode_1.0.0_all.ipk`](dist/com.clyde.fancode_1.0.0_all.ipk)
-   (or from the repo's **Releases**).
-3. Install it with **[Dev Manager Desktop](https://github.com/webosbrew/dev-manager-desktop/releases)**
-   (a GUI — add your TV, **Apps → Install → pick the `.ipk`**), or via SSH on a
-   rooted TV (see [`dist/INSTALL.md`](dist/INSTALL.md) for the one-liner). The
-   Homebrew Channel itself is an app catalog, so custom `.ipk`s go on with one of
-   these tools rather than a URL box.
-4. Launch **FanCode (unofficial)** from your app list.
+2. In **Homebrew Channel → Settings → Add repository**, enter:
+   ```
+   https://raw.githubusercontent.com/cjd9/Fancode-lgwebos/main/repo/api/apps.json
+   ```
+3. **FanCode (unofficial)** now appears in the app list — select it → **Install**.
+4. Launch it from your TV's app list.
+
+Prefer installing the `.ipk` directly (or only have Developer Mode)? See
+[`dist/INSTALL.md`](dist/INSTALL.md) for Dev Manager Desktop and SSH methods.
 
 Full step-by-step (including remote controls): [`dist/INSTALL.md`](dist/INSTALL.md).
 
@@ -68,6 +69,9 @@ cd Fancode-lgwebos
 
 # package the app/ folder into an .ipk
 ares-package app -o dist
+
+# refresh the self-hosted repo manifest + hash to match the new build
+node scripts/update-repo.mjs
 
 # register your TV once (IP + dev-mode passphrase from the Developer Mode app)
 ares-setup-device
@@ -93,8 +97,10 @@ app/
   lib/shaka-player.*.js      Shaka Player 3.3.0 (Widevine EME)
   icon.png / largeIcon.png  launcher icons
 dist/                       prebuilt .ipk + user install guide
+repo/                       self-hosted webosbrew repository (apps.json + manifest)
 docs/DEPLOY.md              developer sideload / debug guide
 scripts/probe.mjs           API diagnostic (device-code login → stream/DRM dump)
+scripts/update-repo.mjs     regenerates repo/ manifest + hash after a new build
 ```
 
 ---
