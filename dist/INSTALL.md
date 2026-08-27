@@ -14,9 +14,11 @@ Widevine DRM support.
 
 ## Easiest: install via Homebrew Channel (permanent, recommended)
 
-1. On a computer, open **https://www.rootmytv.com** and follow the guided steps
-   for your TV's webOS version. This installs the **Homebrew Channel** app on the
-   TV. (It's reversible and widely used.)
+1. Install the **Homebrew Channel** on the TV. On a computer, open
+   **https://cani.rootmy.tv/** and enter your TV model + firmware — it tells you
+   which exploit works for your set and links the guided steps. (The classic
+   **https://rootmy.tv/** method still works on some TVs but is patched on many,
+   so use the checker first.) This is reversible and widely used.
 2. On the TV, open **Homebrew Channel**.
 3. Choose **Install app from URL** (or copy the `.ipk` to a USB stick and pick
    *Install from Storage*).

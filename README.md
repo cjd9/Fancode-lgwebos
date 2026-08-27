@@ -36,8 +36,11 @@ themselves.
 
 The easiest, permanent method is the **Homebrew Channel**:
 
-1. On a computer, open **https://www.rootmytv.com** and follow the guided steps
-   for your TV's webOS version. This installs the **Homebrew Channel** app.
+1. Install the **Homebrew Channel** on the TV by rooting it. Start at
+   **https://cani.rootmy.tv/** to find the working exploit for your exact TV
+   model + firmware, then follow its steps. (The classic **https://rootmy.tv/**
+   exploit still works on some sets, but has been patched on many — the
+   compatibility checker points you to the right method.)
 2. Grab the latest package: [`dist/com.clyde.fancode_1.0.0_all.ipk`](dist/com.clyde.fancode_1.0.0_all.ipk)
    (or from the repo's **Releases**).
 3. In **Homebrew Channel** → **Install app from URL** (or copy the `.ipk` to a USB
