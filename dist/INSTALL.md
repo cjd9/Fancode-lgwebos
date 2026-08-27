@@ -19,17 +19,32 @@ Widevine DRM support.
    which exploit works for your set and links the guided steps. (The classic
    **https://rootmy.tv/** method still works on some TVs but is patched on many,
    so use the checker first.) This is reversible and widely used.
-2. On the TV, open **Homebrew Channel**.
-3. Choose **Install app from URL** (or copy the `.ipk` to a USB stick and pick
-   *Install from Storage*).
-   - Latest package: **https://github.com/cjd9/Fancode-lgwebos/releases** (or the
-     raw file:
-     `https://github.com/cjd9/Fancode-lgwebos/raw/main/dist/com.clyde.fancode_1.0.0_all.ipk`)
-4. It installs and appears in your TV's app list as **"FanCode (unofficial)"**
-   (orange icon). Launch it.
+   Rooting installs the **Homebrew Channel** app automatically.
+2. Download the app package (`.ipk`) to your computer:
+   `https://github.com/cjd9/Fancode-lgwebos/raw/main/dist/com.clyde.fancode_1.0.0_all.ipk`
+   (or from the repo's **Releases**).
+3. Install it on the TV using one of these — the Homebrew Channel itself is an app
+   *catalog*, so you install a custom `.ipk` with one of the tools below, not from
+   a URL box inside it:
 
-Homebrew Channel installs are **permanent** — they survive reboots and don't
-expire.
+   **Option A — Dev Manager Desktop (easiest, no command line)**
+   1. Install **webOS Dev Manager**: https://github.com/webosbrew/dev-manager-desktop/releases
+      (macOS `.dmg`, Windows `.msi`, Linux `.deb`/AppImage).
+   2. Open it — it auto-detects your TV on the network and connects (rooted TVs
+      connect over SSH automatically).
+   3. Go to the **Apps** tab → **Install** → pick the `.ipk` you downloaded. Done.
+
+   **Option B — SSH one-liner (rooted TVs, installs straight from the URL)**
+   ```sh
+   ssh root@<TV-IP>        # default password: alpine  (until you add an SSH key)
+   luna-send-pub -n 1 'luna://org.webosbrew.hbchannel.service/install' \
+     '{"ipkUrl":"https://github.com/cjd9/Fancode-lgwebos/raw/main/dist/com.clyde.fancode_1.0.0_all.ipk","subscribe":true}'
+   ```
+
+4. It appears in your TV's app list as **"FanCode (unofficial)"** (orange icon).
+   Launch it.
+
+Installs on a rooted TV are **permanent** — they survive reboots and don't expire.
 
 ### If your TV can't be rooted
 

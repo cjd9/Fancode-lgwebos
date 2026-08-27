@@ -43,8 +43,11 @@ The easiest, permanent method is the **Homebrew Channel**:
    compatibility checker points you to the right method.)
 2. Grab the latest package: [`dist/com.clyde.fancode_1.0.0_all.ipk`](dist/com.clyde.fancode_1.0.0_all.ipk)
    (or from the repo's **Releases**).
-3. In **Homebrew Channel** → **Install app from URL** (or copy the `.ipk` to a USB
-   stick → *Install from Storage*).
+3. Install it with **[Dev Manager Desktop](https://github.com/webosbrew/dev-manager-desktop/releases)**
+   (a GUI — add your TV, **Apps → Install → pick the `.ipk`**), or via SSH on a
+   rooted TV (see [`dist/INSTALL.md`](dist/INSTALL.md) for the one-liner). The
+   Homebrew Channel itself is an app catalog, so custom `.ipk`s go on with one of
+   these tools rather than a URL box.
 4. Launch **FanCode (unofficial)** from your app list.
 
 Full step-by-step (including remote controls): [`dist/INSTALL.md`](dist/INSTALL.md).
