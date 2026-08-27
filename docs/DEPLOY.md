@@ -23,7 +23,7 @@ LG locks sideloading behind "Developer Mode". Steps:
    - the **passphrase** (a 6-char code)
    - confirm **"Key Server" is ON** (leave it on)
 5. Keep the TV on this screen the first time you connect — dev mode expires
-   after ~50 hours of inactivity and you re-toggle it the same way.
+   after 1000 hours; you can reset the timer in the Developer Mode app.
 
 > The TV and your Mac must be on the **same network**.
 

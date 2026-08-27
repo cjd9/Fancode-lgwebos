@@ -75,9 +75,9 @@ no way around it for the permanent install. Your options then are:
   exists for your model, `cani.rootmy.tv` will say so. (Downgrading isn't always
   possible and is at your own risk.)
 - **Use Developer Mode instead** (see the bottom of this guide). It works on any
-  TV, but the install **expires after ~50 hours** and must be re-enabled, and it
-  needs a computer with LG's CLI — fine for occasional viewing, tedious for daily
-  use.
+  TV and needs no root, but it has a **1000-hour timer** — when it lapses, apps
+  installed this way are removed. You can reset the timer in the Developer Mode
+  app, so this is perfectly usable long-term with an occasional top-up.
 - **Watch on another device** you already own (phone/Android TV/web) — nothing
   here changes your FanCode account.
 
@@ -117,9 +117,30 @@ on webOS; LG only allows that through their own store.
 
 ---
 
-## Alternative: Developer Mode (temporary — for a quick technical test)
+## Alternative: Developer Mode (no rooting required)
 
-If you don't want to install Homebrew Channel, a developer can sideload it, but
-**Developer Mode expires after ~50 hours** and must be re-enabled, so it's only
-good for short testing. Steps are in `DEPLOY.md` in the project (requires the
-`@webos-tools/cli` and the TV's dev-mode passphrase).
+If your TV can't be rooted — or you'd rather not root it — Developer Mode is
+LG's own officially supported sideloading path. It works on any webOS TV.
+
+1. Create a free developer account at https://webostv.developer.lge.com
+   (sign in with an LG account).
+2. On the TV: **LG Content Store** → search **"Developer Mode"** → install it.
+3. Launch **Developer Mode**, log in with that account, turn **Dev Mode Status ON**
+   (the TV restarts), then reopen it and enable **Key Server**.
+4. On your computer, install
+   **[Dev Manager Desktop](https://github.com/webosbrew/dev-manager-desktop/releases)**
+   — a GUI, no command line needed. Add your TV (it needs the IP + the passphrase
+   shown in the Developer Mode app), then **Apps → Install** → pick the `.ipk`.
+
+   Prefer the CLI? See `docs/DEPLOY.md` for the `@webos-tools/cli` (`ares-*`) flow.
+
+**Things to know about Developer Mode**
+- **1000-hour timer** (~41 days). When it lapses, apps installed this way are
+  removed — but you can **reset the timer** in the Developer Mode app, so it's
+  usable long-term with an occasional top-up.
+- **One TV per developer account** — logging in on another TV signs the first one
+  out and disables its Dev Mode.
+- Set a **static IP** for the TV so its address doesn't change.
+- If you can't connect despite Key Server being on, toggle the user agreements
+  (Settings → General → User Agreements) off and back on, then re-enable Key
+  Server — a known EULA quirk.

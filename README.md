@@ -54,7 +54,8 @@ Prefer installing the `.ipk` directly (or only have Developer Mode)? See
 Full step-by-step (including remote controls): [`dist/INSTALL.md`](dist/INSTALL.md).
 
 > Prefer sideloading via Developer Mode instead? See [`docs/DEPLOY.md`](docs/DEPLOY.md).
-> Note that Developer Mode installs expire after ~50 hours; Homebrew Channel is permanent.
+> Note: Developer Mode has a 1000-hour timer (resettable in the Developer Mode app);
+> Homebrew Channel installs are permanent.
 
 ---
 
