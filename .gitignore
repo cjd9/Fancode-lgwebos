@@ -1,0 +1,12 @@
+# local session/token from the diagnostic script — never commit
+.fc-session.json
+scripts/.fc-session.json
+scripts/player.html
+
+# build output
+build/
+*.ipk.tmp
+
+# os / editor
+.DS_Store
+node_modules/

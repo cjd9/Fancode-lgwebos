@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FanCode (unofficial)</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Login screen -->
+  <section id="screen-login" class="screen">
+    <div class="login-box">
+      <h1><span class="brand">FanCode</span> — TV sign-in</h1>
+      <p>On your phone or computer, open:</p>
+      <p class="url" id="login-url">https://fancode.com/tv/login</p>
+      <p>and enter this code:</p>
+      <div class="code" id="login-code">······</div>
+      <p class="hint" id="login-hint">Requesting a code…</p>
+    </div>
+  </section>
+
+  <!-- Home / live matches -->
+  <section id="screen-home" class="screen hidden">
+    <header class="topbar">
+      <span class="brand">FanCode</span>
+      <span class="sub">Live now</span>
+      <span class="spacer"></span>
+      <span class="user" id="home-user"></span>
+    </header>
+    <div class="list" id="match-list"></div>
+    <div class="empty hidden" id="home-empty">No live matches right now.</div>
+  </section>
+
+  <!-- Player -->
+  <section id="screen-player" class="screen hidden">
+    <video id="video" autoplay playsinline></video>
+    <!-- center flash icon shown briefly when you toggle play/pause -->
+    <div class="center-icon hidden" id="center-icon">▶</div>
+    <!-- bottom transport bar; auto-hides -->
+    <div class="player-controls hidden" id="player-controls">
+      <button class="ctrl-btn" id="btn-playpause" aria-label="Play/Pause">❚❚</button>
+      <div class="player-meta">
+        <div class="player-title" id="player-title"></div>
+        <div class="player-status" id="player-status">Loading…</div>
+      </div>
+      <div class="live-pill" id="live-pill">● LIVE</div>
+    </div>
+  </section>
+
+  <script src="lib/shaka-player.compiled.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

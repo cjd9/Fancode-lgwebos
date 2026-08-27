@@ -1,0 +1,84 @@
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; width: 100%; height: 100%; overflow: hidden;
+  background: #0b0b0d; color: #f2f2f4;
+  font-family: -apple-system, "LG Smart UI", "Segoe UI", system-ui, sans-serif;
+}
+/* Design coordinate system = 1080p; 1vw=19.2px, 1vh=10.8px. Using vh/vw keeps
+   proportions identical whether the panel renders at 720p, 1080p or 4K. */
+.hidden { display: none !important; }
+.brand { color: #ff5000; font-weight: 800; letter-spacing: .05em; }
+.screen { position: fixed; inset: 0; width: 100%; height: 100%; }
+
+/* Login */
+#screen-login { display: flex; align-items: center; justify-content: center; }
+.login-box { text-align: center; }
+.login-box h1 { font-size: 4.4vh; margin: 0 0 3.3vh; }
+.login-box p { font-size: 2.9vh; color: #c7c7cf; margin: 1vh 0; }
+.login-box .url { color: #7db6ff; font-size: 3.4vh; }
+.code {
+  font-size: 9.5vh; font-weight: 800; letter-spacing: 1.6vh;
+  margin: 2.5vh 0; color: #fff; background: #17171c;
+  display: inline-block; padding: 1.8vh 4.5vh; border-radius: 1.8vh;
+  border: 0.3vh solid #ff5000;
+}
+.hint { color: #8a8a95 !important; font-size: 2.4vh !important; }
+
+/* Home */
+#screen-home { display: flex; flex-direction: column; }
+.topbar { display: flex; align-items: center; gap: 1.5vw; padding: 3.8vh 2.5vw 1.8vh; font-size: 3.1vh; flex: none; }
+.topbar .sub { color: #9a9aa6; }
+.topbar .spacer { flex: 1; }
+.topbar .user { color: #c7c7cf; font-size: 2.4vh; }
+.list { flex: 1; padding: 1vh 1.6vw; overflow-y: auto; }
+.match {
+  display: flex; align-items: center; gap: 1.4vw;
+  padding: 2.4vh 1.6vw; margin: 1vh 0.8vw; border-radius: 1.6vh;
+  background: #131318; border: 0.3vh solid transparent;
+}
+.match.focus { background: #23232c; border-color: #ff5000; transform: scale(1.012); }
+.dot { width: 1.5vh; height: 1.5vh; border-radius: 50%; background: #444; flex: none; }
+.dot.on { background: #35d07f; box-shadow: 0 0 1.4vh #35d07f; }
+.m-main { min-width: 0; }
+.m-name { font-size: 3.1vh; font-weight: 600; }
+.m-sub { font-size: 2.2vh; color: #9a9aa6; margin-top: 0.5vh; }
+.livetag { color: #35d07f; font-weight: 700; }
+.empty { padding: 8vh 2.5vw; font-size: 2.9vh; color: #9a9aa6; }
+
+/* Player — fills the whole panel */
+#screen-player { background: #000; }
+#video { position: fixed; inset: 0; width: 100%; height: 100%; background: #000; object-fit: contain; }
+
+/* center flash icon on play/pause toggle */
+.center-icon {
+  position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 16vh; height: 16vh; line-height: 16vh; text-align: center;
+  font-size: 7vh; color: #fff; background: rgba(0,0,0,0.55);
+  border-radius: 50%; pointer-events: none;
+}
+.center-icon.pop { animation: popfade 0.6s ease-out; }
+@keyframes popfade { 0% { opacity: 0; transform: translate(-50%,-50%) scale(0.7); } 25% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%,-50%) scale(1.15); } }
+
+/* bottom transport bar */
+.player-controls {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  display: flex; align-items: center; gap: 2vw;
+  padding: 3vh 3vw 4vh;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
+}
+.ctrl-btn {
+  flex: none; width: 8vh; height: 8vh; border-radius: 50%;
+  border: 0.3vh solid #ff5000; background: #17171c; color: #fff;
+  font-size: 3.4vh; line-height: 1; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.player-meta { flex: 1; min-width: 0; text-shadow: 0 0.2vh 0.8vh #000; }
+.player-title { font-size: 3.6vh; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.player-status { font-size: 2.2vh; color: #cfcfd6; margin-top: 0.6vh; }
+.live-pill {
+  flex: none; color: #35d07f; font-weight: 700; font-size: 2.4vh;
+  padding: 0.8vh 1.6vh; border-radius: 1vh; border: 0.25vh solid transparent;
+  cursor: pointer;
+}
+/* behind the live edge: amber + outlined so it reads as "press to go live" */
+.live-pill.behind { color: #ffb020; border-color: #ffb020; }
