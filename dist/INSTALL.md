@@ -127,10 +127,25 @@ LG's own officially supported sideloading path. It works on any webOS TV.
 2. On the TV: **LG Content Store** → search **"Developer Mode"** → install it.
 3. Launch **Developer Mode**, log in with that account, turn **Dev Mode Status ON**
    (the TV restarts), then reopen it and enable **Key Server**.
-4. On your computer, install
-   **[Dev Manager Desktop](https://github.com/webosbrew/dev-manager-desktop/releases)**
-   — a GUI, no command line needed. Add your TV (it needs the IP + the passphrase
-   shown in the Developer Mode app), then **Apps → Install** → pick the `.ipk`.
+4. Download the app package:
+   **[`com.clyde.fancode_1.0.0_all.ipk`](https://github.com/cjd9/Fancode-lgwebos/raw/main/dist/com.clyde.fancode_1.0.0_all.ipk)**
+5. On your computer, install
+   **[webOS Dev Manager](https://github.com/webosbrew/dev-manager-desktop/releases)**
+   — a cross-platform GUI, no command line needed. Open it → **Devices** →
+   **Add new device…**:
+
+   | Field | Value |
+   |---|---|
+   | Device Name | `tv` (anything) |
+   | **Username** | **`prisoner`** |
+   | Address | your TV's IP |
+   | **Port** | **`9922`** |
+   | Authentication | **Dev Mode** + the passphrase from the Developer Mode app |
+
+   > ⚠️ Use `prisoner` / `9922`, **not** `root` / `22` — the latter is for
+   > *rooted* TVs and will fail here.
+
+6. **Save**, then **Apps → Install** → pick the `.ipk` you downloaded.
 
    Prefer the CLI? See `docs/DEPLOY.md` for the `@webos-tools/cli` (`ares-*`) flow.
 

@@ -32,30 +32,81 @@ themselves.
 
 ---
 
-## Install (users)
+## Install
 
-The easiest, permanent method is the **Homebrew Channel**:
+### 📥 Download
 
-1. Install the **Homebrew Channel** on the TV by rooting it. Start at
-   **https://cani.rootmy.tv/** to find the working exploit for your exact TV
-   model + firmware, then follow its steps. (The classic **https://rootmy.tv/**
-   exploit still works on some sets, but has been patched on many — the
-   compatibility checker points you to the right method.)
-2. In **Homebrew Channel → Settings → Add repository**, enter:
+**[`com.clyde.fancode_1.0.0_all.ipk`](https://github.com/cjd9/Fancode-lgwebos/raw/main/dist/com.clyde.fancode_1.0.0_all.ipk)** (137 KB)
+
+---
+
+### Option 1 — Developer Mode + webOS Dev Manager (easiest, works on any TV)
+
+**No rooting required.** Dev Manager is a cross-platform GUI (macOS, Windows,
+Linux) — download the `.ipk` above and install it with a few clicks.
+
+**On the TV (one-time)**
+
+1. Create a free developer account at **https://webostv.developer.lge.com**
+   (sign in with an LG account).
+2. **LG Content Store** → search **"Developer Mode"** → **Install** it.
+3. Launch **Developer Mode**, log in with that account, set **Dev Mode Status → ON**
+   (the TV restarts).
+4. Reopen **Developer Mode** and turn on **Key Server**. Note the **IP address**
+   and the **6-character passphrase** shown on screen — keep this screen up for
+   the next step.
+
+**On your computer**
+
+5. Install **webOS Dev Manager**:
+   **https://github.com/webosbrew/dev-manager-desktop/releases**
+   (macOS `.dmg`, Windows `.msi`, Linux `.deb`/AppImage).
+6. Open it → **Devices** → **Add new device…** and enter:
+
+   | Field | Value |
+   |---|---|
+   | Device Name | `tv` (anything) |
+   | **Username** | **`prisoner`** |
+   | Address | your TV's IP (e.g. `192.168.0.228`) |
+   | **Port** | **`9922`** |
+   | Authentication | **Dev Mode** + the passphrase from step 4 |
+
+   > ⚠️ Use `prisoner` / `9922`, **not** `root` / `22` — those are for *rooted*
+   > TVs and will fail on a Developer Mode TV.
+
+7. **Save**, then open the **Apps** tab → **Install** → choose the `.ipk` you
+   downloaded.
+8. Launch **FanCode (unofficial)** from your TV's app list.
+
+**Good to know:** Developer Mode has a **1000-hour timer** (~41 days). If it
+lapses, apps installed this way are removed — but you can reset the timer in the
+Developer Mode app, so this works fine long-term. Note you can only be logged
+into **one TV per developer account**.
+
+---
+
+### Option 2 — Homebrew Channel repository (permanent, needs a rooted TV)
+
+If your TV is rooted, add this repo once and get 1-click install **plus update
+prompts**:
+
+1. Check whether your TV can be rooted at **https://cani.rootmy.tv/** (enter your
+   model + firmware) and follow the exploit it recommends. Rooting installs the
+   **Homebrew Channel** automatically.
+2. **Homebrew Channel → Settings → Add repository**, enter:
    ```
    https://raw.githubusercontent.com/cjd9/Fancode-lgwebos/main/repo/api/apps.json
    ```
-3. **FanCode (unofficial)** now appears in the app list — select it → **Install**.
+3. **FanCode (unofficial)** appears in the app list — select it → **Install**.
 4. Launch it from your TV's app list.
 
-Prefer installing the `.ipk` directly (or only have Developer Mode)? See
-[`dist/INSTALL.md`](dist/INSTALL.md) for Dev Manager Desktop and SSH methods.
+Installs on a rooted TV are **permanent** — no timer, and updates come through
+the channel.
 
-Full step-by-step (including remote controls): [`dist/INSTALL.md`](dist/INSTALL.md).
+---
 
-> Prefer sideloading via Developer Mode instead? See [`docs/DEPLOY.md`](docs/DEPLOY.md).
-> Note: Developer Mode has a 1000-hour timer (resettable in the Developer Mode app);
-> Homebrew Channel installs are permanent.
+Full step-by-step (including remote controls and an SSH install method):
+[`dist/INSTALL.md`](dist/INSTALL.md).
 
 ---
 
